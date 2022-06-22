@@ -1,0 +1,161 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-16T11:34:50.798Z",
+    "end": "2022-06-16T11:34:52.203Z",
+    "duration": 1405,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "427b87e3-e3c4-45a8-8754-ddfd71c3088e",
+      "title": "",
+      "fullFile": "cypress/e2e/spec.database.cy.js",
+      "file": "cypress/e2e/spec.database.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0ee53140-8d66-4e51-998c-979e9e540b6e",
+          "title": "Example to Demonstrate SQL Database Testing in Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a Table",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Create a Table",
+              "timedOut": null,
+              "duration": 450,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"CREATE TABLE Persons (PersonID int, FirstName varchar(255), Address varchar(255), City varchar(255))\");",
+              "err": {},
+              "uuid": "697a2c77-1c3b-48f2-a41f-392648396b7e",
+              "parentUUID": "0ee53140-8d66-4e51-998c-979e9e540b6e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Input Entries into the table",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Input Entries into the table",
+              "timedOut": null,
+              "duration": 173,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"INSERT INTO Persons (PersonID, FirstName, Address, City) VALUES\\n        (001, \\\"John\\\", \\\"House No. 01\\\", \\\"Helsinki\\\"),\\n        (002, \\\"Pam\\\", \\\"House No. 02\\\", \\\"Espoo\\\"),\\n        (003, \\\"Dwight\\\", \\\"House No. 03\\\", \\\"Lapland\\\"),\\n        (004, \\\"Michael\\\", \\\"House No. 04\\\", \\\"Vantaa\\\");\").then(function (result) {\n  expect(result.affectedRows).to.equal(4);\n});",
+              "err": {},
+              "uuid": "b14da6cc-4b4c-406c-9fb4-9b43b10cb1a3",
+              "parentUUID": "0ee53140-8d66-4e51-998c-979e9e540b6e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update an Entry into the table and verify",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Update an Entry into the table and verify",
+              "timedOut": null,
+              "duration": 175,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"UPDATE Persons SET FirstName = \\\"Kevin\\\" WHERE City=\\\"Vantaa\\\"\").then(function (result) {\n  expect(result.changedRows).to.equal(1);\n});\ncy.task('queryDb', \"SELECT FirstName FROM Persons WHERE City=\\\"Vantaa\\\"\").then(function (result) {\n  expect(result[0].FirstName).to.equal('Kevin');\n});",
+              "err": {},
+              "uuid": "cd3b73b9-a5da-4938-bd62-b76636e7692c",
+              "parentUUID": "0ee53140-8d66-4e51-998c-979e9e540b6e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify that there is only one row where the city is Espoo",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Verify that there is only one row where the city is Espoo",
+              "timedOut": null,
+              "duration": 115,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"SELECT COUNT(*) as \\\"rowCount\\\" FROM Persons WHERE City=\\\"Espoo\\\"\").then(function (result) {\n  expect(result[0].rowCount).to.equal(1);\n});",
+              "err": {},
+              "uuid": "f86dcdc9-84ef-4c54-91ce-a10f2a8348a1",
+              "parentUUID": "0ee53140-8d66-4e51-998c-979e9e540b6e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "697a2c77-1c3b-48f2-a41f-392648396b7e",
+            "b14da6cc-4b4c-406c-9fb4-9b43b10cb1a3",
+            "cd3b73b9-a5da-4938-bd62-b76636e7692c",
+            "f86dcdc9-84ef-4c54-91ce-a10f2a8348a1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 913,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-16T11:48:08.691Z",
+    "end": "2022-06-16T11:48:20.952Z",
+    "duration": 12261,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f73f1d67-f2c2-4071-9bd6-0a3837b44f14",
+      "title": "",
+      "fullFile": "cypress/e2e/spec.login.cy.js",
+      "file": "cypress/e2e/spec.login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d097cae3-5a00-4d36-a491-c29522155548",
+          "title": "Login Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login successfully",
+              "fullTitle": "Login Test should login successfully",
+              "timedOut": null,
+              "duration": 6494,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.stealmylogin.com/demo.html');\ncy.get('[name=\"username\"]').type('fake@email.com');\ncy.get('[name=\"password\"]').type('aPassword');\ncy.get('[value=\"login\"]').click(); // Should be on a new URL which\n// includes '/commands/actions'\ncy.url().should('include', 'example.com');",
+              "err": {},
+              "uuid": "4428e377-a468-4f62-a686-96af8f65c687",
+              "parentUUID": "d097cae3-5a00-4d36-a491-c29522155548",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4428e377-a468-4f62-a686-96af8f65c687"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6494,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

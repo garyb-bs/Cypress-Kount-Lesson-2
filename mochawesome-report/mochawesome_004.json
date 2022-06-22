@@ -1,0 +1,200 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2022-06-16T11:25:04.993Z",
+    "end": "2022-06-16T11:25:11.763Z",
+    "duration": 6770,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c0e76c31-d398-43b5-8b88-74afc56d516a",
+      "title": "",
+      "fullFile": "cypress/e2e/spec.database.cy.js",
+      "file": "cypress/e2e/spec.database.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "263cb359-00be-431f-9d5c-b180a6073c2e",
+          "title": "Example to Demonstrate SQL Database Testing in Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a Table",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Create a Table",
+              "timedOut": null,
+              "duration": 1266,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"CREATE TABLE Persons (PersonID int, FirstName varchar(255), Address varchar(255), City varchar(255))\");",
+              "err": {
+                "message": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task\n    at http://localhost:63415/__cypress/runner/cypress_runner.js:160154:78\n    at tryCatcher (http://localhost:63415/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (http://localhost:63415/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (http://localhost:63415/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (http://localhost:63415/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (http://localhost:63415/__cypress/runner/cypress_runner.js:11125:18)\n    at _drainQueueStep (http://localhost:63415/__cypress/runner/cypress_runner.js:7719:12)\n    at _drainQueue (http://localhost:63415/__cypress/runner/cypress_runner.js:7712:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7728:5)\n    at Async.drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7598:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:63415/__cypress/tests?p=cypress/e2e/spec.database.cy.js:6:8)\n\nFrom Node.js Internals:\n  Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n      at Handshake.Sequence._packetToError (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)\n      at Handshake.ErrorPacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)\n      at Protocol._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:291:23)\n      at Parser._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:433:10)\n      at Parser.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:43:10)\n      at Protocol.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:38:16)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:88:28)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:526:10)\n      at Socket.emit (node:events:390:28)\n      at Socket.emit (node:domain:475:12)\n      at addChunk (node:internal/streams/readable:324:12)\n      at readableAddChunk (node:internal/streams/readable:297:9)\n      at Socket.Readable.push (node:internal/streams/readable:234:10)\n      at TCP.onStreamRead (node:internal/stream_base_commons:190:23)\n  \n  --------------------\n      at Protocol._enqueue (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:144:48)\n      at Protocol.handshake (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:51:23)\n      at Connection.connect (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:116:18)\n      at queryTestDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:18:14)\n      at queryDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:37:47)\n      at invoke (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:234:16)\n      at /Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:59:14\n      at tryCatcher (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/util.js:16:23)\n      at Function.Promise.attempt.Promise.try (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/method.js:39:29)\n      at Object.wrapChildPromise (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:58:23)\n      at RunPlugins.taskExecute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:240:10)\n      at RunPlugins.execute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:160:21)\n      at EventEmitter.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:257:12)\n      at EventEmitter.emit (node:events:390:28)\n      at EventEmitter.emit (node:domain:475:12)\n      at process.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:33:22)\n      at process.emit (node:events:390:28)\n      at process.emit (node:domain:475:12)\n      at process.emit.sharedData.processEmitHook.installedValue [as emit] (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/node_modules/@cspotcode/source-map-support/source-map-support.js:613:40)\n      at emit (node:internal/child_process:915:12)\n      at processTicksAndRejections (node:internal/process/task_queues:84:21)\n  ",
+                "diff": null
+              },
+              "uuid": "951bb185-5486-46dc-a9eb-9ee8ff60ac26",
+              "parentUUID": "263cb359-00be-431f-9d5c-b180a6073c2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Input Entries into the table",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Input Entries into the table",
+              "timedOut": null,
+              "duration": 300,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"INSERT INTO Persons (PersonID, FirstName, Address, City) VALUES\\n        (001, \\\"John\\\", \\\"House No. 01\\\", \\\"Helsinki\\\"),\\n        (002, \\\"Pam\\\", \\\"House No. 02\\\", \\\"Espoo\\\"),\\n        (003, \\\"Dwight\\\", \\\"House No. 03\\\", \\\"Lapland\\\"),\\n        (004, \\\"Michael\\\", \\\"House No. 04\\\", \\\"Vantaa\\\");\").then(function (result) {\n  expect(result.affectedRows).to.equal(4);\n});",
+              "err": {
+                "message": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task\n    at http://localhost:63415/__cypress/runner/cypress_runner.js:160154:78\n    at tryCatcher (http://localhost:63415/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (http://localhost:63415/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (http://localhost:63415/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (http://localhost:63415/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (http://localhost:63415/__cypress/runner/cypress_runner.js:11125:18)\n    at _drainQueueStep (http://localhost:63415/__cypress/runner/cypress_runner.js:7719:12)\n    at _drainQueue (http://localhost:63415/__cypress/runner/cypress_runner.js:7712:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7728:5)\n    at Async.drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7598:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:63415/__cypress/tests?p=cypress/e2e/spec.database.cy.js:9:8)\n\nFrom Node.js Internals:\n  Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n      at Handshake.Sequence._packetToError (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)\n      at Handshake.ErrorPacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)\n      at Protocol._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:291:23)\n      at Parser._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:433:10)\n      at Parser.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:43:10)\n      at Protocol.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:38:16)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:88:28)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:526:10)\n      at Socket.emit (node:events:390:28)\n      at Socket.emit (node:domain:475:12)\n      at addChunk (node:internal/streams/readable:324:12)\n      at readableAddChunk (node:internal/streams/readable:297:9)\n      at Socket.Readable.push (node:internal/streams/readable:234:10)\n      at TCP.onStreamRead (node:internal/stream_base_commons:190:23)\n  \n  --------------------\n      at Protocol._enqueue (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:144:48)\n      at Protocol.handshake (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:51:23)\n      at Connection.connect (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:116:18)\n      at queryTestDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:18:14)\n      at queryDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:37:47)\n      at invoke (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:234:16)\n      at /Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:59:14\n      at tryCatcher (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/util.js:16:23)\n      at Function.Promise.attempt.Promise.try (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/method.js:39:29)\n      at Object.wrapChildPromise (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:58:23)\n      at RunPlugins.taskExecute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:240:10)\n      at RunPlugins.execute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:160:21)\n      at EventEmitter.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:257:12)\n      at EventEmitter.emit (node:events:390:28)\n      at EventEmitter.emit (node:domain:475:12)\n      at process.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:33:22)\n      at process.emit (node:events:390:28)\n      at process.emit (node:domain:475:12)\n      at process.emit.sharedData.processEmitHook.installedValue [as emit] (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/node_modules/@cspotcode/source-map-support/source-map-support.js:613:40)\n      at emit (node:internal/child_process:915:12)\n      at processTicksAndRejections (node:internal/process/task_queues:84:21)\n  ",
+                "diff": null
+              },
+              "uuid": "5ea18869-7465-41e1-898b-b7ff06e0e6f6",
+              "parentUUID": "263cb359-00be-431f-9d5c-b180a6073c2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update an Entry into the table and verify",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Update an Entry into the table and verify",
+              "timedOut": null,
+              "duration": 445,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"UPDATE Persons SET FirstName = \\\"Kevin\\\" WHERE City=\\\"Vantaa\\\"\").then(function (result) {\n  expect(result.changedRows).to.equal(1);\n});\ncy.task('queryDb', \"SELECT FirstName FROM Persons WHERE City=\\\"Vantaa\\\"\").then(function (result) {\n  expect(result[0].FirstName).to.equal('Kevin');\n});",
+              "err": {
+                "message": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task\n    at http://localhost:63415/__cypress/runner/cypress_runner.js:160154:78\n    at tryCatcher (http://localhost:63415/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (http://localhost:63415/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (http://localhost:63415/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (http://localhost:63415/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (http://localhost:63415/__cypress/runner/cypress_runner.js:11125:18)\n    at _drainQueueStep (http://localhost:63415/__cypress/runner/cypress_runner.js:7719:12)\n    at _drainQueue (http://localhost:63415/__cypress/runner/cypress_runner.js:7712:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7728:5)\n    at Async.drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7598:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:63415/__cypress/tests?p=cypress/e2e/spec.database.cy.js:14:8)\n\nFrom Node.js Internals:\n  Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n      at Handshake.Sequence._packetToError (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)\n      at Handshake.ErrorPacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)\n      at Protocol._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:291:23)\n      at Parser._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:433:10)\n      at Parser.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:43:10)\n      at Protocol.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:38:16)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:88:28)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:526:10)\n      at Socket.emit (node:events:390:28)\n      at Socket.emit (node:domain:475:12)\n      at addChunk (node:internal/streams/readable:324:12)\n      at readableAddChunk (node:internal/streams/readable:297:9)\n      at Socket.Readable.push (node:internal/streams/readable:234:10)\n      at TCP.onStreamRead (node:internal/stream_base_commons:190:23)\n  \n  --------------------\n      at Protocol._enqueue (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:144:48)\n      at Protocol.handshake (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:51:23)\n      at Connection.connect (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:116:18)\n      at queryTestDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:18:14)\n      at queryDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:37:47)\n      at invoke (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:234:16)\n      at /Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:59:14\n      at tryCatcher (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/util.js:16:23)\n      at Function.Promise.attempt.Promise.try (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/method.js:39:29)\n      at Object.wrapChildPromise (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:58:23)\n      at RunPlugins.taskExecute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:240:10)\n      at RunPlugins.execute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:160:21)\n      at EventEmitter.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:257:12)\n      at EventEmitter.emit (node:events:390:28)\n      at EventEmitter.emit (node:domain:475:12)\n      at process.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:33:22)\n      at process.emit (node:events:390:28)\n      at process.emit (node:domain:475:12)\n      at process.emit.sharedData.processEmitHook.installedValue [as emit] (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/node_modules/@cspotcode/source-map-support/source-map-support.js:613:40)\n      at emit (node:internal/child_process:915:12)\n      at processTicksAndRejections (node:internal/process/task_queues:84:21)\n  ",
+                "diff": null
+              },
+              "uuid": "8fac36b3-cca4-4518-9796-c9b860a172ff",
+              "parentUUID": "263cb359-00be-431f-9d5c-b180a6073c2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify that there is only one row where the city is Espoo",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Verify that there is only one row where the city is Espoo",
+              "timedOut": null,
+              "duration": 362,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"SELECT COUNT(*) as \\\"rowCount\\\" FROM Persons WHERE City=\\\"Espoo\\\"\").then(function (result) {\n  expect(result[0].rowCount).to.equal(1);\n});",
+              "err": {
+                "message": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task\n    at http://localhost:63415/__cypress/runner/cypress_runner.js:160154:78\n    at tryCatcher (http://localhost:63415/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (http://localhost:63415/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (http://localhost:63415/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (http://localhost:63415/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (http://localhost:63415/__cypress/runner/cypress_runner.js:11125:18)\n    at _drainQueueStep (http://localhost:63415/__cypress/runner/cypress_runner.js:7719:12)\n    at _drainQueue (http://localhost:63415/__cypress/runner/cypress_runner.js:7712:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7728:5)\n    at Async.drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7598:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:63415/__cypress/tests?p=cypress/e2e/spec.database.cy.js:22:8)\n\nFrom Node.js Internals:\n  Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n      at Handshake.Sequence._packetToError (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)\n      at Handshake.ErrorPacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)\n      at Protocol._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:291:23)\n      at Parser._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:433:10)\n      at Parser.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:43:10)\n      at Protocol.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:38:16)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:88:28)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:526:10)\n      at Socket.emit (node:events:390:28)\n      at Socket.emit (node:domain:475:12)\n      at addChunk (node:internal/streams/readable:324:12)\n      at readableAddChunk (node:internal/streams/readable:297:9)\n      at Socket.Readable.push (node:internal/streams/readable:234:10)\n      at TCP.onStreamRead (node:internal/stream_base_commons:190:23)\n  \n  --------------------\n      at Protocol._enqueue (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:144:48)\n      at Protocol.handshake (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:51:23)\n      at Connection.connect (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:116:18)\n      at queryTestDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:18:14)\n      at queryDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:37:47)\n      at invoke (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:234:16)\n      at /Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:59:14\n      at tryCatcher (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/util.js:16:23)\n      at Function.Promise.attempt.Promise.try (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/method.js:39:29)\n      at Object.wrapChildPromise (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:58:23)\n      at RunPlugins.taskExecute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:240:10)\n      at RunPlugins.execute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:160:21)\n      at EventEmitter.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:257:12)\n      at EventEmitter.emit (node:events:390:28)\n      at EventEmitter.emit (node:domain:475:12)\n      at process.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:33:22)\n      at process.emit (node:events:390:28)\n      at process.emit (node:domain:475:12)\n      at process.emit.sharedData.processEmitHook.installedValue [as emit] (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/node_modules/@cspotcode/source-map-support/source-map-support.js:613:40)\n      at emit (node:internal/child_process:915:12)\n      at processTicksAndRejections (node:internal/process/task_queues:84:21)\n  ",
+                "diff": null
+              },
+              "uuid": "e57fba91-4a83-4f53-8956-eddb5aec87ad",
+              "parentUUID": "263cb359-00be-431f-9d5c-b180a6073c2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a Table and Verify",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Delete a Table and Verify",
+              "timedOut": null,
+              "duration": 533,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"DROP TABLE Persons\").then(function (result) {\n  expect(result.message).to.equal(\"\");\n});",
+              "err": {
+                "message": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n\nhttps://on.cypress.io/api/task\n    at http://localhost:63415/__cypress/runner/cypress_runner.js:160154:78\n    at tryCatcher (http://localhost:63415/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (http://localhost:63415/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (http://localhost:63415/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (http://localhost:63415/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (http://localhost:63415/__cypress/runner/cypress_runner.js:11125:18)\n    at _drainQueueStep (http://localhost:63415/__cypress/runner/cypress_runner.js:7719:12)\n    at _drainQueue (http://localhost:63415/__cypress/runner/cypress_runner.js:7712:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7728:5)\n    at Async.drainQueues (http://localhost:63415/__cypress/runner/cypress_runner.js:7598:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:63415/__cypress/tests?p=cypress/e2e/spec.database.cy.js:27:8)\n\nFrom Node.js Internals:\n  Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client\n      at Handshake.Sequence._packetToError (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)\n      at Handshake.ErrorPacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)\n      at Protocol._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:291:23)\n      at Parser._parsePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:433:10)\n      at Parser.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Parser.js:43:10)\n      at Protocol.write (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:38:16)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:88:28)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:526:10)\n      at Socket.emit (node:events:390:28)\n      at Socket.emit (node:domain:475:12)\n      at addChunk (node:internal/streams/readable:324:12)\n      at readableAddChunk (node:internal/streams/readable:297:9)\n      at Socket.Readable.push (node:internal/streams/readable:234:10)\n      at TCP.onStreamRead (node:internal/stream_base_commons:190:23)\n  \n  --------------------\n      at Protocol._enqueue (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:144:48)\n      at Protocol.handshake (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/protocol/Protocol.js:51:23)\n      at Connection.connect (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql/lib/Connection.js:116:18)\n      at queryTestDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:18:14)\n      at queryDb (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/cypress.config.js:37:47)\n      at invoke (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:234:16)\n      at /Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:59:14\n      at tryCatcher (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/util.js:16:23)\n      at Function.Promise.attempt.Promise.try (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/node_modules/bluebird/js/release/method.js:39:29)\n      at Object.wrapChildPromise (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:58:23)\n      at RunPlugins.taskExecute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:240:10)\n      at RunPlugins.execute (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:160:21)\n      at EventEmitter.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/child/run_plugins.js:257:12)\n      at EventEmitter.emit (node:events:390:28)\n      at EventEmitter.emit (node:domain:475:12)\n      at process.<anonymous> (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/packages/server/lib/plugins/util.js:33:22)\n      at process.emit (node:events:390:28)\n      at process.emit (node:domain:475:12)\n      at process.emit.sharedData.processEmitHook.installedValue [as emit] (/Users/garybehan/Library/Caches/Cypress/10.1.0/Cypress.app/Contents/Resources/app/node_modules/@cspotcode/source-map-support/source-map-support.js:613:40)\n      at emit (node:internal/child_process:915:12)\n      at processTicksAndRejections (node:internal/process/task_queues:84:21)\n  ",
+                "diff": null
+              },
+              "uuid": "9f3f7279-8620-4b1c-88d3-462ceb9f01d8",
+              "parentUUID": "263cb359-00be-431f-9d5c-b180a6073c2e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "951bb185-5486-46dc-a9eb-9ee8ff60ac26",
+            "5ea18869-7465-41e1-898b-b7ff06e0e6f6",
+            "8fac36b3-cca4-4518-9796-c9b860a172ff",
+            "e57fba91-4a83-4f53-8956-eddb5aec87ad",
+            "9f3f7279-8620-4b1c-88d3-462ceb9f01d8"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2906,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

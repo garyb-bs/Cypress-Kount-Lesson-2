@@ -1,0 +1,123 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-21T15:33:45.786Z",
+    "end": "2022-06-21T15:33:54.915Z",
+    "duration": 9129,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0fac415e-40bb-4688-a5f1-99b79faeae74",
+      "title": "",
+      "fullFile": "cypress/e2e/spec.login.cy.js",
+      "file": "cypress/e2e/spec.login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4ad8ce09-02dc-4e5a-a0e8-359be4cafc0f",
+          "title": "A simple login test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login successfully",
+              "fullTitle": "A simple login test should login successfully",
+              "timedOut": null,
+              "duration": 4739,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.stealmylogin.com/demo.html');\ncy.get('[name=\"username\"]').type('fake@email.com');\ncy.get('[name=\"password\"]').type('aPassword');\ncy.get('[value=\"login\"]').click();",
+              "err": {},
+              "uuid": "053693b0-6240-40b2-959f-5f11573bb610",
+              "parentUUID": "4ad8ce09-02dc-4e5a-a0e8-359be4cafc0f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should land on the correct page",
+              "fullTitle": "A simple login test should land on the correct page",
+              "timedOut": null,
+              "duration": 150,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Should be on a new URL which includes 'example.com\ncy.url().should('include', 'example.com');",
+              "err": {},
+              "uuid": "12db05ee-e29d-4ef2-a034-7beca82b4687",
+              "parentUUID": "4ad8ce09-02dc-4e5a-a0e8-359be4cafc0f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "053693b0-6240-40b2-959f-5f11573bb610",
+            "12db05ee-e29d-4ef2-a034-7beca82b4687"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4889,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

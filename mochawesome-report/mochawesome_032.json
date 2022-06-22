@@ -1,0 +1,204 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-22T09:26:03.782Z",
+    "end": "2022-06-22T09:26:08.519Z",
+    "duration": 4737,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "21dd0f67-ec9e-4926-aa3c-acb2e4845b9e",
+      "title": "",
+      "fullFile": "cypress/e2e/spec.database.cy.js",
+      "file": "cypress/e2e/spec.database.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a6879dcd-bd11-44e9-92d6-f5a69eb47bb8",
+          "title": "Example to Demonstrate SQL Database Testing in Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should create a Table",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress should create a Table",
+              "timedOut": null,
+              "duration": 490,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"CREATE TABLE Persons (PersonID int, FirstName varchar(255), Address varchar(255), City varchar(255))\");",
+              "err": {},
+              "uuid": "9be23d92-6a0d-486f-b438-227298fe7886",
+              "parentUUID": "a6879dcd-bd11-44e9-92d6-f5a69eb47bb8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should input Entries into the table",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress should input Entries into the table",
+              "timedOut": null,
+              "duration": 472,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"INSERT INTO Persons (PersonID, FirstName, Address, City) VALUES\\n        (001, \\\"John\\\", \\\"House No. 01\\\", \\\"Helsinki\\\"),\\n        (002, \\\"Pam\\\", \\\"House No. 02\\\", \\\"Espoo\\\"),\\n        (003, \\\"Dwight\\\", \\\"House No. 03\\\", \\\"Lapland\\\"),\\n        (004, \\\"Michael\\\", \\\"House No. 04\\\", \\\"Vantaa\\\");\").then(function (result) {\n  expect(result.affectedRows).to.equal(4);\n});",
+              "err": {},
+              "uuid": "77b6aed7-a392-4ec1-9944-bf62a6d90053",
+              "parentUUID": "a6879dcd-bd11-44e9-92d6-f5a69eb47bb8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should see the new information on the web page",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress should see the new information on the web page",
+              "timedOut": null,
+              "duration": 518,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://kount.com\");\ncy.get('[name=FirstName]').text().should('equal', 'Kevin');",
+              "err": {
+                "message": "TypeError: cy.get(...).text is not a function",
+                "estack": "TypeError: cy.get(...).text is not a function\n    at Context.eval (http://localhost:65100/__cypress/tests?p=cypress/e2e/spec.database.cy.js:15:32)",
+                "diff": null
+              },
+              "uuid": "7b67d0f7-d817-46a0-b188-9ee3dea19a7a",
+              "parentUUID": "a6879dcd-bd11-44e9-92d6-f5a69eb47bb8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should update an Entry into the table and verify",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress should update an Entry into the table and verify",
+              "timedOut": null,
+              "duration": 346,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"UPDATE Persons SET FirstName = \\\"Kevin\\\" WHERE City=\\\"Vantaa\\\"\").then(function (result) {\n  expect(result.changedRows).to.equal(1);\n});\ncy.task('queryDb', \"SELECT FirstName FROM Persons WHERE City=\\\"Vantaa\\\"\").then(function (result) {\n  expect(result[0].FirstName).to.equal('Kevin');\n});",
+              "err": {},
+              "uuid": "6dedcc92-d7b6-4af3-b7a3-871c1d13aa25",
+              "parentUUID": "a6879dcd-bd11-44e9-92d6-f5a69eb47bb8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should verify that there is only one row where the city is Espoo",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress should verify that there is only one row where the city is Espoo",
+              "timedOut": null,
+              "duration": 357,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"SELECT COUNT(*) as \\\"rowCount\\\" FROM Persons WHERE City=\\\"Espoo\\\"\").then(function (result) {\n  expect(result[0].rowCount).to.equal(1);\n});",
+              "err": {},
+              "uuid": "0809fd8d-f1bc-46d1-b6d5-ac2418304380",
+              "parentUUID": "a6879dcd-bd11-44e9-92d6-f5a69eb47bb8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should delete a Table and Verify",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress should delete a Table and Verify",
+              "timedOut": null,
+              "duration": 317,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"DROP TABLE Persons\").then(function (result) {\n  cy.log(result);\n});",
+              "err": {},
+              "uuid": "f63250c1-e0d7-4f1e-a01e-ef67c1ce5c26",
+              "parentUUID": "a6879dcd-bd11-44e9-92d6-f5a69eb47bb8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9be23d92-6a0d-486f-b438-227298fe7886",
+            "77b6aed7-a392-4ec1-9944-bf62a6d90053",
+            "6dedcc92-d7b6-4af3-b7a3-871c1d13aa25",
+            "0809fd8d-f1bc-46d1-b6d5-ac2418304380",
+            "f63250c1-e0d7-4f1e-a01e-ef67c1ce5c26"
+          ],
+          "failures": [
+            "7b67d0f7-d817-46a0-b188-9ee3dea19a7a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2500,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

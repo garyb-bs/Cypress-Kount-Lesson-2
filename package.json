@@ -1,0 +1,29 @@
+{
+  "name": "cypress-basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "cypress run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@4tw/cypress-drag-drop": "^1.8.0",
+    "cypress": "^10.1.0",
+    "cypress-cucumber-preprocessor": "^4.2.0",
+    "cypress-downloadfile": "^1.2.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-grep": "^2.13.1",
+    "cypress-real-events": "^1.5.1",
+    "cypress-recurse": "^1.8.1",
+    "cypress-select-tests": "^1.7.1",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  },
+  "dependencies": {
+    "mysql2": "^2.3.3"
+  }
+}

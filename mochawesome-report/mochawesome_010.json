@@ -1,0 +1,185 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-16T11:36:12.266Z",
+    "end": "2022-06-16T11:36:16.285Z",
+    "duration": 4019,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "66bb9180-de70-42c1-8a2a-874bab9a4e0e",
+      "title": "",
+      "fullFile": "cypress/e2e/spec.database.cy.js",
+      "file": "cypress/e2e/spec.database.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "051b7cf6-cc1b-4223-9d3f-9869f080bb85",
+          "title": "Example to Demonstrate SQL Database Testing in Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a Table",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Create a Table",
+              "timedOut": null,
+              "duration": 460,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"CREATE TABLE Persons (PersonID int, FirstName varchar(255), Address varchar(255), City varchar(255))\");",
+              "err": {},
+              "uuid": "5e57f16b-594d-4496-bb89-59a1124bec29",
+              "parentUUID": "051b7cf6-cc1b-4223-9d3f-9869f080bb85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Input Entries into the table",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Input Entries into the table",
+              "timedOut": null,
+              "duration": 81,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"INSERT INTO Persons (PersonID, FirstName, Address, City) VALUES\\n        (001, \\\"John\\\", \\\"House No. 01\\\", \\\"Helsinki\\\"),\\n        (002, \\\"Pam\\\", \\\"House No. 02\\\", \\\"Espoo\\\"),\\n        (003, \\\"Dwight\\\", \\\"House No. 03\\\", \\\"Lapland\\\"),\\n        (004, \\\"Michael\\\", \\\"House No. 04\\\", \\\"Vantaa\\\");\").then(function (result) {\n  expect(result.affectedRows).to.equal(4);\n});",
+              "err": {},
+              "uuid": "77762b8e-3b8d-40d1-b5e2-ff1a7c5f7402",
+              "parentUUID": "051b7cf6-cc1b-4223-9d3f-9869f080bb85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Update an Entry into the table and verify",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Update an Entry into the table and verify",
+              "timedOut": null,
+              "duration": 108,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"UPDATE Persons SET FirstName = \\\"Kevin\\\" WHERE City=\\\"Vantaa\\\"\").then(function (result) {\n  expect(result.changedRows).to.equal(1);\n});\ncy.task('queryDb', \"SELECT FirstName FROM Persons WHERE City=\\\"Vantaa\\\"\").then(function (result) {\n  expect(result[0].FirstName).to.equal('Kevin');\n});",
+              "err": {},
+              "uuid": "c3aac94a-9ce5-4d88-9aad-5b08391b2d86",
+              "parentUUID": "051b7cf6-cc1b-4223-9d3f-9869f080bb85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify that there is only one row where the city is Espoo",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Verify that there is only one row where the city is Espoo",
+              "timedOut": null,
+              "duration": 57,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"SELECT COUNT(*) as \\\"rowCount\\\" FROM Persons WHERE City=\\\"Espoo\\\"\").then(function (result) {\n  expect(result[0].rowCount).to.equal(1);\n});",
+              "err": {},
+              "uuid": "548eb43f-9764-4732-b150-89f00111cfba",
+              "parentUUID": "051b7cf6-cc1b-4223-9d3f-9869f080bb85",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Delete a Table and Verify",
+              "fullTitle": "Example to Demonstrate SQL Database Testing in Cypress Delete a Table and Verify",
+              "timedOut": null,
+              "duration": 738,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.task('queryDb', \"DROP TABLE Persons\").then(function (result) {\n  expect(result.message).to.equal(\"\");\n});",
+              "err": {
+                "message": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> Unknown table 'classicmodels.persons'\n\nhttps://on.cypress.io/api/task",
+                "estack": "CypressError: `cy.task('queryDb')` failed with the following error:\n\n> Unknown table 'classicmodels.persons'\n\nhttps://on.cypress.io/api/task\n    at http://localhost:50917/__cypress/runner/cypress_runner.js:160154:78\n    at tryCatcher (http://localhost:50917/__cypress/runner/cypress_runner.js:13012:23)\n    at Promise._settlePromiseFromHandler (http://localhost:50917/__cypress/runner/cypress_runner.js:10947:31)\n    at Promise._settlePromise (http://localhost:50917/__cypress/runner/cypress_runner.js:11004:18)\n    at Promise._settlePromise0 (http://localhost:50917/__cypress/runner/cypress_runner.js:11049:10)\n    at Promise._settlePromises (http://localhost:50917/__cypress/runner/cypress_runner.js:11125:18)\n    at _drainQueueStep (http://localhost:50917/__cypress/runner/cypress_runner.js:7719:12)\n    at _drainQueue (http://localhost:50917/__cypress/runner/cypress_runner.js:7712:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:50917/__cypress/runner/cypress_runner.js:7728:5)\n    at Async.drainQueues (http://localhost:50917/__cypress/runner/cypress_runner.js:7598:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:50917/__cypress/tests?p=cypress/e2e/spec.database.cy.js:27:8)\n\nFrom Node.js Internals:\n  Error: Unknown table 'classicmodels.persons'\n      at Packet.asError (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql2/lib/packets/packet.js:728:17)\n      at Query.execute (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql2/lib/commands/command.js:29:26)\n      at Connection.handlePacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql2/lib/connection.js:456:32)\n      at PacketParser.onPacket (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql2/lib/connection.js:85:12)\n      at PacketParser.executeStart (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql2/lib/packet_parser.js:75:16)\n      at Socket.<anonymous> (/Users/garybehan/Documents/Code/Customers/Kount/cypress-basic/node_modules/mysql2/lib/connection.js:92:25)\n      at Socket.emit (node:events:390:28)\n      at Socket.emit (node:domain:475:12)\n      at addChunk (node:internal/streams/readable:324:12)\n      at readableAddChunk (node:internal/streams/readable:297:9)\n      at Socket.Readable.push (node:internal/streams/readable:234:10)\n      at TCP.onStreamRead (node:internal/stream_base_commons:190:23)\n  ",
+                "diff": null
+              },
+              "uuid": "cd23ec69-a190-47cd-957c-0c519135a78c",
+              "parentUUID": "051b7cf6-cc1b-4223-9d3f-9869f080bb85",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5e57f16b-594d-4496-bb89-59a1124bec29",
+            "77762b8e-3b8d-40d1-b5e2-ff1a7c5f7402",
+            "c3aac94a-9ce5-4d88-9aad-5b08391b2d86",
+            "548eb43f-9764-4732-b150-89f00111cfba"
+          ],
+          "failures": [
+            "cd23ec69-a190-47cd-957c-0c519135a78c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1444,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
